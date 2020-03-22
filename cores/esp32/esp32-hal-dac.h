@@ -26,8 +26,14 @@ extern "C" {
 
 #include "esp32-hal.h"
 #include "driver/gpio.h"
+#include "driver/dac.h"
 
 void dacWrite(uint8_t pin, uint8_t value);
+void dac_coseine_enable(dac_channel_t channel);
+void dac_frequency_set(int clk_8m_div, int frequency_step);
+void dac_scale_set(dac_channel_t channel, int scale);
+void dac_offset_set(dac_channel_t channel, int offset);
+void dac_invert_set(dac_channel_t channel, int invert);
 
 #ifdef __cplusplus
 }
